@@ -192,7 +192,8 @@
 
 			} else {
 
-				const magic = THREE.LoaderUtils.decodeText( new Uint8Array( data, 0, 4 ) );
+				const magic = data.slice(0,4).toString();
+				console.log("GOT MAGIC",magic);
 
 				if ( magic === BINARY_EXTENSION_HEADER_MAGIC ) {
 
